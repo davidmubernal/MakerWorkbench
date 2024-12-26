@@ -37,7 +37,7 @@ import kcomp_optic
 import fcfun
 import kparts 
 
-from fcfun import V0, VX, VY, VZ, V0ROT, addBox, addCyl, addCyl_pos, fillet_len
+from fcfun import V0, VX, VY, VZ, V0ROT, add_box, addCyl, addCyl_pos, fillet_len
 from fcfun import VXN, VYN, VZN
 from fcfun import addBolt, addBoltNut_hole, NutHole
 
@@ -187,7 +187,7 @@ class CageCube (object):
             # for each normal, we take the other 4 perpendicular axis
             # for example, is vnormal is (1,0,0), the 4 perpendicular axis
             # will be (0,1,1), (0,-1,1), (0,-1,-1), (0,1,-1)
-            fc_perp_coord_list = fcfun.get_fclist_4perp2_fcvec(vnormal)
+            fc_perp_coord_list = vectors.get_fclist_4perp2_fcvec(vnormal)
             vnormal_coord = DraftVecUtils.scale(vnormal,
                                                 (side_l/2. - rod_thread_l))
             for fc_perp_coord in fc_perp_coord_list:
@@ -547,7 +547,7 @@ class CageCubeHalf (object):
             # for each normal, we take the other 4 perpendicular axis
             # for example, is vnormal is (1,0,0), the 4 perpendicular axis
             # will be (0,1,1), (0,-1,1), (0,-1,-1), (0,1,-1)
-            fc_perp_coord_list = fcfun.get_fclist_4perp2_fcvec(vnormal)
+            fc_perp_coord_list = vectors.get_fclist_4perp2_fcvec(vnormal)
             # position on the normal dimension (where the rod hole starts)
             vnormal_coord = DraftVecUtils.scale(vnormal,
                                                 (side_l/2. - rod_depth))

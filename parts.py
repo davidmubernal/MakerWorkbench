@@ -37,7 +37,7 @@ import kparts
 import shp_clss
 import fc_clss
 
-from fcfun import V0, VX, VY, VZ, V0ROT, addBox, addCyl, addCyl_pos, fillet_len
+from fcfun import V0, VX, VY, VZ, V0ROT, add_box, addCyl, addCyl_pos, fillet_len
 from fcfun import VXN, VYN, VZN
 from fcfun import addBolt, addBoltNut_hole, NutHole
 from kcomp import TOL

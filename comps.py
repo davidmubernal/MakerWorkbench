@@ -39,7 +39,7 @@ import fcfun
 import shp_clss
 import fc_clss
 
-from fcfun import V0, VX, VY, VZ, V0ROT, addBox, addCyl, addCyl_pos, fillet_len
+from fcfun import V0, VX, VY, VZ, V0ROT, add_box, addCyl, addCyl_pos, fillet_len
 from fcfun import VXN, VYN, VZN
 from fcfun import addBolt, addBoltNut_hole, NutHole
 
@@ -130,7 +130,7 @@ class Sk(object):
 
             # the total dimensions: LxWxH
             # we will cut it
-            total_box = addBox(x=sk_d,
+            total_box = add_box(x=sk_d,
                                y=sk_w,
                                z=sk_z,
                                name="total_box",
@@ -140,14 +140,14 @@ class Sk(object):
             side_box_y = (sk_w - skdict['I']) / 2.
             side_box_z = sk_z - skdict['g']
 
-            side_cut_box_r = addBox(sk_d, side_box_y, side_box_z,
+            side_cut_box_r = add_box(sk_d, side_box_y, side_box_z,
                                     "side_box_r")
             side_cut_pos_r = FreeCAD.Vector(0,
                                             skdict['I'] / 2.,
                                             skdict['g'])
             side_cut_box_r.Placement.Base = side_cut_pos_r
 
-            side_cut_box_l = addBox(sk_d, side_box_y, side_box_z,
+            side_cut_box_l = add_box(sk_d, side_box_y, side_box_z,
                                     "side_box_l")
             side_cut_pos_l = FreeCAD.Vector(0, -sk_w / 2., skdict['g'])
             side_cut_box_l.Placement.Base = side_cut_pos_l
@@ -179,7 +179,7 @@ class Sk(object):
                                                      V0)
 
             # the upper separation
-            up_sep = addBox(sk_d + 2,
+            up_sep = add_box(sk_d + 2,
                             self.up_sep_dist,
                             sk_z - skdict['h'] + 1,
                             "up_sep")

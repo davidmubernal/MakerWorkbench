@@ -32,7 +32,7 @@ import kcomp  # before, it was called mat_cte
 import fcfun
 import comps
 
-from fcfun import V0, VX, VY, VZ, V0ROT, addBox, addCyl, addCyl_pos, fillet_len
+from fcfun import V0, VX, VY, VZ, V0ROT, add_box, addCyl, addCyl_pos, fillet_len
 from fcfun import addBolt, addBoltNut_hole, NutHole
 
 logging.basicConfig(level=logging.DEBUG,
